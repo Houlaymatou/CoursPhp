@@ -33,7 +33,7 @@
     $markup .='</tbody>';  
     $markup .= '</table>';
     print $markup;
-  //function
+  //functions
       function generate_user_row($user) {
 
           $row = '<th scope="row">' .$user['id'] .'</th>';
@@ -46,10 +46,17 @@
           }
          
       function generate_rol_cell ($roles) {
+        
           $cell = '<td>';
-          foreach ($roles as  $role) {
-               $cell .= $role . ", " ;
+          $nb = count($roles);
+          for ($i = 0; $i < $nb; $i++) {
+        
+              if($i) {
+                 $cell .= ', ';  
               }
+             
+              $cell .= $roles[$i];
+          }
           $cell .= '</td>';
           return $cell;
 
