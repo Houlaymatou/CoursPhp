@@ -35,7 +35,7 @@ foreach ($users_db as $user_db) {
     'user_roles' => generate_user_roles($user_db['roles']),
   );
 }
-include_once 'users.html.php';
+include_once 'views/users.html.php';
 /*    FUNCTIONS     */
 function generate_user_roles($roles) {
   $output = NULL;
