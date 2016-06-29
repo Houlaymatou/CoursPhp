@@ -53,8 +53,9 @@
       <!-- Example row of columns -->
       <div class="well">
       <?php
-      include "users.php";
+      include "module/user/users.php";
       ?>
+
       </div>
       <footer>
         <p>&copy; Company 2015</p>
