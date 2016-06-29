@@ -42,6 +42,7 @@
           $row .= '<td>';
           $row .= generate_rol_cell ($user['role']);
           $row .= '</td>';
+          //$row .='<td>' .implode(', ', $user['role']).'<t/d>'
           return $row;
           }
          
