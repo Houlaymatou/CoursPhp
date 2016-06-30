@@ -28,8 +28,8 @@
                 <?php $checked = 'checked';?>
             <?php endif;?>
             <label for="role-<?php print $role['name']; ?>">
-                <input type="checkbox"  id="role-admin" name="roles[<?php print$role['id'];?>]" value="<?php print 
-                $role['label'];?>">
+                <input <?php print $checked; ?> type="checkbox" name="roles[<?php print $role['id']; ?>]" 
+                value="<?php print $role['name']; ?>" id="role-<?php print $role['name']; ?>">
                 <?php print $role['label'];?>
             </label> <br>
            
