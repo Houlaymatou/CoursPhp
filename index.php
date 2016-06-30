@@ -53,8 +53,8 @@
       <!-- Example row of columns -->
       <div class="well">
       <?php
-      //include "module/user/users.php";
-      include "module/user/form/user_create_from.html.php";
+      
+      include "module/user/user_edit.php";
       ?>
 
       </div>
