@@ -1,18 +1,31 @@
 <?php
-	
+	  //si le mot de passe n'est pas vide et les deux sont identiques
+		//l'utilsateur peut continuer
 	 	if(!empty($_POST['password1']) && $_POST['password1'] == $_POST['password2']){
 
+	 		//on s'assure que le mail utilisé n'existe pas déjà
 		 		if(!user_exists($_POST['email'])) {
+
+		 			//on securise le mot de passe en le hachant
 			 		$pwd = hash('sha512', $_POST['password1']);
+
+			 		//Connexion à la base de données
 					$db = new PDO('mysql:host=localhost;dbname=php', 'root', 'lamine');
 					
-					//sql query
+					//sql query préparation des requette sql 
 				
 					$query = $db->prepare("INSERT INTO user (name,email,password) VALUES(:name, :email ,:password)");
+
+					//Attribution de valeur à chaque placeholder
+
 					$query->bindValue(':name', $_POST['name']);
 					$query->bindValue(':email', $_POST['email']);
 					$query->bindValue(':password',$pwd);
+
+					//Insertion d'un utilisateur dans la BDD
 					$query->execute();
+
+					
 					$user_id = $db->lastInsertId();
 					//role
 					foreach ($_POST['roles'] as  $role_name) {
